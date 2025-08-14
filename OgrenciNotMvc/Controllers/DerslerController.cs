@@ -16,5 +16,19 @@ namespace OgrenciNotMvc.Controllers
             var dersler = db.Dersler.ToList(); //Dersler tablosundaki verileri listeledik
 			return View(dersler);
         }
-    }
+
+		[HttpGet]// Yeni ders eklemek icin sayfa acildi
+		public ActionResult YeniDers() //Yeni ders eklemek icin sayfa acildi
+		{
+			return View();
+		}
+
+		[HttpPost]// Yeni ders eklemek icin sayfa gonderildi
+		public ActionResult YeniDers(Dersler dersler)//geriye deger donduren metod olmus oldu
+		{
+			db.Dersler.Add(dersler); //Dersler tablosuna yeni ders ekledik
+			db.SaveChanges(); //Degisiklikleri kaydettik
+			return View();
+		}
+	}
 }

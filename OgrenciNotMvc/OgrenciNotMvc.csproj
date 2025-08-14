@@ -594,6 +594,7 @@
     <Content Include="Views\Kulupler\Index.cshtml" />
     <Content Include="Views\Ogrenciler\Index.cshtml" />
     <Content Include="Views\Notlar\Index.cshtml" />
+    <Content Include="Views\Dersler\YeniDers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

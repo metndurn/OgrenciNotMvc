@@ -5,7 +5,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@*popup kullanmak ıstersen arastırmayı unutma*@
 <table class="table table-bordered">
     <tr>
         <th>Ders Id</th>
@@ -19,4 +19,6 @@
                 <td>@ders.DersAd</td>
             </tr>
         }
+    </tbody>
 </table>
+<a href="/Dersler/YeniDers/" class="btn btn-primary">Yeni Ders Ekle</a>

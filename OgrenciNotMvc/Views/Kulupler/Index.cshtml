@@ -14,11 +14,13 @@
     </tr>
     <tbody>
         @foreach (var kulup in Model)
-         {
+        {
             <tr>
                 <td>@kulup.KulupId</td>
                 <td>@kulup.KulupAd</td>
                 <td>@kulup.KulupKontenjan</td>
             </tr>
-         }
+        }
+    </tbody>
 </table>
+<a href="#" class="btn btn-primary">Yeni Kulup Ekle</a>
