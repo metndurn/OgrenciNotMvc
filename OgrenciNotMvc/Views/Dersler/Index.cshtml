@@ -1,0 +1,22 @@
+﻿@using OgrenciNotMvc.Models.EntityFramework
+@*neyin nereden cekilecegini belirtmemiz gerekiyor o yuzden burası var (@model List<Dersler>) *@
+@model List<Dersler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Ders Id</th>
+        <th>Ders Adı</th>
+    </tr>
+    <tbody>
+        @foreach (var ders in Model)
+        {
+            <tr>
+                <td>@ders.DersId</td>
+                <td>@ders.DersAd</td>
+            </tr>
+        }
+</table>
