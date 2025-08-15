@@ -16,5 +16,17 @@ namespace OgrenciNotMvc.Controllers
 			var notlar = db.Notlar.ToList(); // Notlar tablosundaki verileri listeledik
 			return View(notlar);
         }
-    }
+		[HttpGet]
+		public ActionResult YeniNot()
+		{
+			return View();
+		}
+		[HttpPost]
+		public ActionResult YeniNot(Notlar notlar)
+		{
+			db.Notlar.Add(notlar);
+			db.SaveChanges();
+			return RedirectToAction("Index");
+		}
+	}
 }

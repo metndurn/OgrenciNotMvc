@@ -1,0 +1,50 @@
+﻿@model OgrenciNotMvc.Models.EntityFramework.Ogrenciler
+@{
+    ViewBag.Title = "YeniOgrenci";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*burada forma post eklendi sebebi ise gelen istege cevap vermek icin bos eklemelerın onune gecebılmek ıcındır*@
+<form method="post" class="form-group">
+    <div>
+        <label>Öğrenci Id</label>
+        <input type="text" class="form-control" name="OgrenciId" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Adı</label>
+        <input type="text" class="form-control" name="OgrenciAdi" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Soyadı</label>
+        <input type="text" class="form-control" name="OgrenciSoyad" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Fotoğraf</label>
+        <input type="text" class="form-control" name="OgrenciFotograf" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Cinsiyet</label>
+        <input type="text" class="form-control" name="OgrenciCinsiyet" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Kulüp</label>
+        @Html.DropDownListFor(m => m.Kulupler.KulupId, (List<SelectListItem>)ViewBag.Kulupler, new {@class="form-control"})
+    </div>
+    <div style="margin-top:10px">
+        <button class="btn btn-info">Öğrenci Ekle</button>
+    </div>
+</form>
+
+@*<div style="margin-top:10px">
+    <label>Şehir Seçimi</label>
+    @Html.DropDownList("Sehirler",
+      new[]
+      {
+         new SelectListItem() { Value = "1", Text = "Ankara" },
+         new SelectListItem() { Value = "2", Text = "İstanbul" },
+         new SelectListItem() { Value = "3", Text = "Erzurum" },
+         new SelectListItem() { Value = "4", Text = "Bursa" },
+         new SelectListItem() { Value = "5", Text = "Yalova" }
+      }, "Sehir Seciniz...", new { @class = "form-control" })
+
+</div>*@

@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "YeniNot";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*burada forma post eklendi sebebi ise gelen istege cevap vermek icin bos eklemelerın onune gecebılmek ıcındır*@
+<form method="post" class="form-group">
+    <div>
+        <label>Not Id</label>
+        <input type="text" class="form-control" name="NotId" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Ders Id</label>
+        <input type="text" class="form-control" name="DersId" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Ögrenci Id</label>
+        <input type="text" class="form-control" name="OgrenciId" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Sınav 1</label>
+        <input type="text" class="form-control" name="Sınav1" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Sınav 2</label>
+        <input type="text" class="form-control" name="Sınav2" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Sınav 3</label>
+        <input type="text" class="form-control" name="Sınav3" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Proje</label>
+        <input type="text" class="form-control" name="Proje" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Ortalama</label>
+        <input type="text" class="form-control" name="Ortalama" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Durum</label>
+        <input type="text" class="form-control" name="Durum" />
+    </div>
+    <div style="margin-top:10px">
+        <button class="btn btn-info">Not Ekle</button>
+    </div>
+</form>

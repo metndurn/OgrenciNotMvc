@@ -16,5 +16,26 @@ namespace OgrenciNotMvc.Controllers
 			var ogrenciler = db.Ogrenciler.ToList(); // Ogrenciler tablosundaki verileri listeledik
 			return View(ogrenciler);
         }
-    }
+		[HttpGet]
+		public ActionResult YeniOgrenci()
+		{
+			List<SelectListItem> kulupler = (from x in db.Kulupler.ToList()
+											 select new SelectListItem
+											 {
+												 Text = x.KulupAd,
+												 Value = x.KulupId.ToString()
+											 }).ToList();
+			ViewBag.kulupler = kulupler; // Kulupler listesini ViewBag'e atadık
+			return View();
+		}
+		[HttpPost]
+		public ActionResult YeniOgrenci(Ogrenciler ogrenciler)
+		{
+			var kulup = db.Kulupler.Where(x => x.KulupId == ogrenciler.Kulupler.KulupId).FirstOrDefault();//Kulüp ID'sine göre kulüp bilgilerini aldık
+			ogrenciler.Kulupler = kulup; // Ogrenciler modeline kulüp bilgilerini atadık
+			db.Ogrenciler.Add(ogrenciler);
+			db.SaveChanges();
+			return RedirectToAction("Index");
+		}
+	}
 }

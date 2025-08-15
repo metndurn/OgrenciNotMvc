@@ -16,5 +16,17 @@ namespace OgrenciNotMvc.Controllers
             var kulupler = db.Kulupler.ToList(); // Kulupler tablosundaki verileri listeledik
 			return View(kulupler);
         }
-    }
+        [HttpGet]
+        public ActionResult YeniKulup()
+		{
+			return View();
+		}
+		[HttpPost]
+		public ActionResult YeniKulup(Kulupler kulupler)
+		{
+			db.Kulupler.Add(kulupler);
+			db.SaveChanges();
+			return RedirectToAction("Index");
+		}
+	}
 }

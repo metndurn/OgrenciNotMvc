@@ -28,7 +28,7 @@ namespace OgrenciNotMvc.Controllers
 		{
 			db.Dersler.Add(dersler); //Dersler tablosuna yeni ders ekledik
 			db.SaveChanges(); //Degisiklikleri kaydettik
-			return View();
+			return RedirectToAction("Index");
 		}
 	}
 }
