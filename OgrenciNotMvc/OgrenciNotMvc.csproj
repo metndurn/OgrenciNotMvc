@@ -601,6 +601,9 @@
     <Content Include="Views\Ogrenciler\YeniOgrenci.cshtml" />
     <Content Include="Views\Hesaplama\Index.cshtml" />
     <Content Include="Views\Kulupler\KulupGetir.cshtml" />
+    <Content Include="Views\Dersler\DersGetir.cshtml" />
+    <Content Include="Views\Notlar\NotGetir.cshtml" />
+    <Content Include="Views\Ogrenciler\OgrenciGetir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

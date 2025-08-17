@@ -44,5 +44,10 @@ namespace OgrenciNotMvc.Controllers
 			db.SaveChanges();
 			return RedirectToAction("Index");
 		}
+		public ActionResult OgrenciGetir(int id)
+		{
+			var ogrenci = db.Ogrenciler.Find(id); // Güncellenecek öğrenciyi bulduk
+			return View("OgrenciGetir", ogrenci); // Öğrenci bilgilerini güncelleme sayfasına gönderdik
+		}
 	}
 }

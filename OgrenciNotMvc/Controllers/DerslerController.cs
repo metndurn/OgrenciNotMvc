@@ -37,5 +37,10 @@ namespace OgrenciNotMvc.Controllers
 			db.SaveChanges();
 			return RedirectToAction("Index");
 		}
+		public ActionResult DersGetir(int id) //Guncelleme islemi icin ders bilgileri alindi
+		{
+			var ders = db.Dersler.Find(id); //Guncellenecek dersi bulduk
+			return View("DersGetir",ders); //Ders bilgilerini guncelleme sayfasina gonderdik
+		}
 	}
 }

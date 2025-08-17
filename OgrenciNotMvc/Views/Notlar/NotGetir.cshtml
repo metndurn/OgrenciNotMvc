@@ -1,0 +1,49 @@
+﻿@model OgrenciNotMvc.Models.EntityFramework.Notlar
+@{
+    ViewBag.Title = "NotGetir";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Notlar", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.DersId)
+        @Html.TextBoxFor(m => m.DersId, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.OgrenciId)
+        @Html.TextBoxFor(m => m.OgrenciId, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Sinav1)
+        @Html.TextBoxFor(m => m.Sinav1, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Sinav2)
+        @Html.TextBoxFor(m => m.Sinav2, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Sinav3)
+        @Html.TextBoxFor(m => m.Sinav2, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Proje)
+        @Html.TextBoxFor(m => m.Proje, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Ortalama)
+        @Html.TextBoxFor(m => m.Ortalama, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Durum)
+        @Html.TextBoxFor(m => m.Durum, new { @class = "form-control" })
+    </div>
+
+    @Html.HiddenFor(m => m.NotId)
+    <div style="margin-top:15px">
+        <button class="btn btn-default">Hesapla</button>
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+}

@@ -28,12 +28,11 @@ namespace OgrenciNotMvc.Controllers
 			db.SaveChanges();
 			return RedirectToAction("Index");
 		}
-		//public ActionResult Guncelle(int id)
-		//{
-		//	var guncelleme = db.Notlar.Find(id);
-		//	db.Notlar.up
-		//	db.SaveChanges();
-		//	return RedirectToAction("Index");
-		//}
+		
+		public ActionResult NotGetir(int id)
+		{
+			var not = db.Notlar.Find(id); // Güncellenecek notu bulduk
+			return View("NotGetir", not);
+		}
 	}
 }
