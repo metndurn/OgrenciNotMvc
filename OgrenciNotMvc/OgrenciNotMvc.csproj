@@ -600,6 +600,7 @@
     <Content Include="Views\Notlar\YeniNot.cshtml" />
     <Content Include="Views\Ogrenciler\YeniOgrenci.cshtml" />
     <Content Include="Views\Hesaplama\Index.cshtml" />
+    <Content Include="Views\Kulupler\KulupGetir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

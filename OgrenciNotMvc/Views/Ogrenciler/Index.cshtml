@@ -13,6 +13,7 @@
         <th>Ogrenci Fotografı</th>
         <th>Ogrenci Cinsiyeti</th>
         <th>Ogrenci Kulubu</th>
+        <th>İşlemler</th>
     </tr>
     <tbody>
         @foreach (var ogrenci in Model)
@@ -24,6 +25,10 @@
                 <td>@ogrenci.OgrenciFotograf</td>
                 <td>@ogrenci.OgrenciCinsiyet</td>
                 <td>@ogrenci.OgrenciKulup</td>
+                <td>
+                    <a href="/Ogrenciler/Sil/ @ogrenci.OgrenciId" class="btn btn-danger">Sil</a>
+                    <a href="/Ogrenciler/Guncelle/ @ogrenci.OgrenciId" class="btn btn-success">Güncelle</a>
+                </td>
             </tr>
         }
     </tbody>

@@ -28,5 +28,18 @@ namespace OgrenciNotMvc.Controllers
 			db.SaveChanges();
 			return RedirectToAction("Index");
 		}
+
+		public ActionResult Sil(int id)
+		{
+			var kulup = db.Kulupler.Find(id); // Silinecek kulübü bulduk
+			db.Kulupler.Remove(kulup); // Kulübü veritabanından sildik
+			db.SaveChanges(); // Değişiklikleri kaydettik
+			return RedirectToAction("Index");
+		}
+		public ActionResult KulupGetir(int id)//guncelleme yapmak ıcın kulubu baska sayfada ıslememiz lazım o yuzden buraya ıhtıyac vardır
+		{
+			var kulup = db.Kulupler.Find(id); // Güncellenecek kulübü bulduk
+			return View("KulupGetir"); // Kulüp bilgilerini güncelleme sayfasına gönderdik
+		}
 	}
 }

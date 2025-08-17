@@ -30,5 +30,12 @@ namespace OgrenciNotMvc.Controllers
 			db.SaveChanges(); //Degisiklikleri kaydettik
 			return RedirectToAction("Index");
 		}
+		public ActionResult Sil(int id) //Silme islemi icin id degeri alindi
+		{
+			var ders = db.Dersler.Find(id);
+			db.Dersler.Remove(ders);
+			db.SaveChanges();
+			return RedirectToAction("Index");
+		}
 	}
 }

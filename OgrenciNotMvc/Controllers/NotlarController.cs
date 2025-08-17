@@ -28,5 +28,12 @@ namespace OgrenciNotMvc.Controllers
 			db.SaveChanges();
 			return RedirectToAction("Index");
 		}
+		//public ActionResult Guncelle(int id)
+		//{
+		//	var guncelleme = db.Notlar.Find(id);
+		//	db.Notlar.up
+		//	db.SaveChanges();
+		//	return RedirectToAction("Index");
+		//}
 	}
 }

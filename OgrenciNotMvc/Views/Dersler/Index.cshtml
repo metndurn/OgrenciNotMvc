@@ -10,6 +10,7 @@
     <tr>
         <th>Ders Id</th>
         <th>Ders Adı</th>
+        <th>İşlemler</th>
     </tr>
     <tbody>
         @foreach (var ders in Model)
@@ -17,6 +18,10 @@
             <tr>
                 <td>@ders.DersId</td>
                 <td>@ders.DersAd</td>
+                <td>
+                    <a href="/Dersler/Sil/ @ders.DersId" class="btn btn-danger">Sil</a>
+                    <a href="/Dersler/Guncelle/ @ders.DersId" class="btn btn-success">Güncelle</a>
+                </td>
             </tr>
         }
     </tbody>
