@@ -47,7 +47,29 @@ namespace OgrenciNotMvc.Controllers
 		public ActionResult OgrenciGetir(int id)
 		{
 			var ogrenci = db.Ogrenciler.Find(id); // Güncellenecek öğrenciyi bulduk
+
+			List<SelectListItem> kulupler = (from x in db.Kulupler.ToList()
+											 select new SelectListItem
+											 {
+												 Text = x.KulupAd,
+												 Value = x.KulupId.ToString()
+											 }).ToList();
+			ViewBag.kulupler = kulupler; // Kulupler listesini ViewBag'e atadık
+
+
 			return View("OgrenciGetir", ogrenci); // Öğrenci bilgilerini güncelleme sayfasına gönderdik
+		}
+		public ActionResult Guncelle(Ogrenciler ogrenciler)
+		{
+			var ogrenci = db.Ogrenciler.Find(ogrenciler.OgrenciId); // Güncellenecek öğrenciyi bulduk
+			ogrenci.OgrenciAdi = ogrenciler.OgrenciAdi; // Öğrenci adını güncelledik
+			ogrenci.OgrenciSoyad = ogrenciler.OgrenciSoyad; // Öğrenci soyadını güncelledik
+			ogrenci.OgrenciCinsiyet = ogrenciler.OgrenciCinsiyet; // Öğrenci cinsiyetini güncelledik
+			ogrenci.OgrenciFotograf = ogrenciler.OgrenciFotograf; // Öğrenci fotoğrafını güncelledik
+			ogrenci.Kulupler = ogrenciler.Kulupler; // Öğrenci kulüp bilgilerini güncelledik
+			//ogrenci.OgrenciKulup = ogrenciler.OgrenciKulup; // Öğrenci kulüp ID'sini güncelledik
+			db.SaveChanges(); // Değişiklikleri kaydettik
+			return RedirectToAction("Index", "Ogrenciler");
 		}
 	}
 }

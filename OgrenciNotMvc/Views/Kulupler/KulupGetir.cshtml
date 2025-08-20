@@ -5,13 +5,17 @@
 }
 
 @using (Html.BeginForm("Guncelle", "Kulupler", FormMethod.Post))
- {
+{
     <div class="form-group">
         @Html.LabelFor(m => m.KulupAd)
-        @Html.TextBoxFor(m => m.KulupAd, new { @class = "form-control"})
+        @Html.TextBoxFor(m => m.KulupAd, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.KulupKontenjan)
+        @Html.TextBoxFor(m => m.KulupKontenjan, new { @class = "form-control" })
     </div>
     @Html.HiddenFor(m => m.KulupId)
-    <div  style="margin-top:15px">
+    <div style="margin-top:15px">
         <button class="btn btn-info">Güncelle</button>
     </div>
- }
+}

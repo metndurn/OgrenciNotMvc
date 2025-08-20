@@ -15,7 +15,7 @@
     </tr>
     <tbody>
         @foreach (var kulup in Model)
-        {
+         {
             <tr>
                 <td>@kulup.KulupId</td>
                 <td>@kulup.KulupAd</td>
@@ -25,7 +25,7 @@
                     <a href="/Kulupler/KulupGetir/@kulup.KulupId" class="btn btn-success">Güncelle</a>
                 </td>
             </tr>
-        }
+         }
     </tbody>
 </table>
 <a href="/Kulupler/YeniKulup/" class="btn btn-primary">Yeni Kulüp Ekle</a>

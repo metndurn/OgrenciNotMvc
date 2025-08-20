@@ -41,5 +41,13 @@ namespace OgrenciNotMvc.Controllers
 			var kulup = db.Kulupler.Find(id); // Güncellenecek kulübü bulduk
 			return View("KulupGetir",kulup); // Kulüp bilgilerini güncelleme sayfasına gönderdik
 		}
+		public ActionResult Guncelle(Kulupler kulupler)
+		{
+			var kulup = db.Kulupler.Find(kulupler.KulupId); // Güncellenecek kulübü bulduk
+			kulup.KulupAd = kulupler.KulupAd; // Kulüp adını güncelledik
+			kulup.KulupKontenjan = kulupler.KulupKontenjan; // Kulüp kontenjanını güncelledik
+			db.SaveChanges(); // Değişiklikleri kaydettik
+			return RedirectToAction("Index","Kulupler");
+		}
 	}
 }

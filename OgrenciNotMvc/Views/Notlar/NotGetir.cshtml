@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@using (Html.BeginForm("Guncelle", "Notlar", FormMethod.Post))
+@using (Html.BeginForm("NotGetir", "Notlar", FormMethod.Post))
 {
     <div class="form-group">
         @Html.LabelFor(m => m.DersId)
@@ -24,7 +24,7 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Sinav3)
-        @Html.TextBoxFor(m => m.Sinav2, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.Sinav3, new { @class = "form-control" })
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Proje)
@@ -32,7 +32,7 @@
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Ortalama)
-        @Html.TextBoxFor(m => m.Ortalama, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.Ortalama, new { @Value = @ViewBag.Ortalama, @class = "form-control" })
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Durum)
@@ -40,10 +40,10 @@
     </div>
 
     @Html.HiddenFor(m => m.NotId)
-    <div style="margin-top:15px">
-        <button class="btn btn-default">Hesapla</button>
-    </div>
-    <div style="margin-top:15px">
-        <button class="btn btn-info">Güncelle</button>
-    </div>
+<div>
+    <button type="submit" name="Islem" value="Hesapla" class="btn btn-default">Hesapla</button>
+    <br />
+    <br />
+    <button type="submit" name="Islem" value="NotGuncelle" class="btn btn-info">Güncelle</button>
+</div>
 }
